@@ -28,7 +28,7 @@ bash LB_aug/aug4.sh
 python LB_aug/create_aug_data.py
 ```
 
-##分类器训练
+## 分类器训练
 分别训练不同task所有seed的分类器，首先需要对文件目录进行调整：
 
 ```bash
@@ -44,4 +44,19 @@ mv k-shot/yelp Yelp
 # cd into LB_aug
 cd ../   
 python create_aug_data.py    #create augment.tsv
+```
+进入再运行不同task的bash文件完成classifier的训练：
+
+```bash
+sh train_cls_agnews_allseed.sh
+sh train_cls_mrpc_allseed.sh
+sh train_cls_sst2_allseed.sh
+sh train_cls_yelp_allseed.sh
+sh train_cls_snli_allseed.sh
+sh train_cls_trec_allseed.sh
+```
+
+最后对每一个task进行predict，得到结果：
+```bash
+python test_submit.py
 ```
