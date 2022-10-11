@@ -33,6 +33,13 @@ python LB_aug/create_aug_data.py
 ```
 
 ## 分类器训练
+在进行训练之前，需要进行环境的变更：
+
+```bash
+conda deactivate
+conda activate lmaas
+```
+
 分别训练不同task所有seed的分类器，首先需要对文件目录进行调整：
 
 ```bash
