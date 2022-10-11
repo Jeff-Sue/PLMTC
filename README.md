@@ -60,7 +60,7 @@ sh train_cls_snli_allseed.sh
 sh train_cls_trec_allseed.sh
 ```
 
-最后对每一个task进行predict，得到结果：
+最后对每一个task进行predict，得到结果并保存在prediction文件夹中：
 ```bash
 python test_submit.py
 ```
