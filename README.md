@@ -6,6 +6,10 @@ docker run -it --gpus 1 plm_cls:code /bin/bash
 ```
 进入docker容器后，cd /home/plm_cls_docker,开始运行代码
 ## 数据增强
+进入工作环境：
+```bash
+conda activate lmbff
+```
 对任务中的6个数据集，使用除去五个seed里的train_data外的其他train_data作为数据增强，其中，snli，yelp和agnews三个数据集只选取前10000个数据集。其中Yelp和AGNews是是从huggingface上加载的，其他的四个数据集来自于LM-BFF的repo。[LM-BFF相关代码](https://github.com/princeton-nlp/LM-BFF)<br>
 ```bash
 python LB_aug/create_data.py
