@@ -27,3 +27,21 @@ bash LB_aug/aug4.sh
 ```bash
 python LB_aug/create_aug_data.py
 ```
+
+##分类器训练
+分别训练不同task所有seed的分类器，首先需要对文件目录进行调整：
+
+```bash
+cd LB_aug/data
+
+mv k-shot/ag_news AGNews
+mv k-shot/MRPC MRPC
+mv k-shot/SNLI SNLI
+mv k-shot/SST-2 SST-2
+mv k-shot/trec TREC
+mv k-shot/yelp Yelp
+
+# cd into LB_aug
+cd ../   
+python create_aug_data.py    #create augment.tsv
+```
