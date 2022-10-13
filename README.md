@@ -59,7 +59,7 @@ python create_aug_data.py    #create augment.tsv
 进入再运行不同task的bash文件完成classifier的训练：
 
 ```bash
-cd ..
+cd ../
 sh train_cls_agnews_allseed.sh
 sh train_cls_mrpc_allseed.sh
 sh train_cls_sst2_allseed.sh
