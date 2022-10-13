@@ -31,10 +31,6 @@ bash LB_aug/aug3.sh
 ```bash
 bash LB_aug/aug4.sh
 ```
-对预测结果进行筛选，将置信度较高的sample存入各个dataset的各个seed增强文件中
-```bash
-python LB_aug/create_aug_data.py
-```
 
 ## 分类器训练
 在进行训练之前，需要进行环境的变更：
@@ -63,6 +59,7 @@ python create_aug_data.py    #create augment.tsv
 进入再运行不同task的bash文件完成classifier的训练：
 
 ```bash
+cd ..
 sh train_cls_agnews_allseed.sh
 sh train_cls_mrpc_allseed.sh
 sh train_cls_sst2_allseed.sh
