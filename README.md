@@ -12,25 +12,19 @@ This is the implementation for the PLMTuningCompetition.
 ```
 利用LM-BFF模型对train_data进行预测，得到logits的numpy文件。对于不同数据集的不同seed，已经通过grid search找到最佳的参数设置，具体参考aug_setting.txt。出于复现考虑，将30组程序放入4个bash文件。
 ```bash
-bash LB_aug/aug1.sh
+bash aug1.sh
 ```
 ```bash
-bash LB_aug/aug2.sh
+bash aug2.sh
 ```
 ```bash
-bash LB_aug/aug3.sh
+bash aug3.sh
 ```
 ```bash
-bash LB_aug/aug4.sh
+bash aug4.sh
 ```
 
 ## 分类器训练
-在进行训练之前，需要进行环境的变更：
-
-```bash
-conda deactivate
-conda activate lmaas
-```
 
 分别训练不同task所有seed的分类器，首先需要对文件目录进行调整：
 
