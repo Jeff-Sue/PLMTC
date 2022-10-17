@@ -53,9 +53,17 @@ mv k-shot/trec TREC
 mv k-shot/yelp Yelp
 
 # cd into LB_aug
-cd ../   
-python create_aug_data.py    #create augment.tsv
+cd ../
+
+mv logits/ag_news logits/AGNews
+mv logits/trec logits/TREC
+mv logits/yelp logits/Yelp 
+
+# create augment.tsv
+/opt/conda/envs/lmaas/bin/python create_aug_data.py  
 ```
+echo "create aug data completed"
+
 进入再运行不同task的bash文件完成classifier的训练：
 
 ```bash
@@ -70,5 +78,6 @@ sh train_cls_trec_allseed.sh
 
 最后对每一个task进行predict，得到结果并保存在prediction文件夹中：
 ```bash
-python test_submit.py
+/opt/conda/envs/lmaas/bin/python test_submit.py
 ```
+echo "produce predictions completed, saved in /home/plm_cls_docker/predictions"
