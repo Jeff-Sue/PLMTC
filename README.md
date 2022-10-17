@@ -12,11 +12,11 @@ conda activate lmbff
 ```
 对任务中的6个数据集，使用除去五个seed里的train_data外的其他train_data作为数据增强，其中，snli，yelp和agnews三个数据集只选取前10000个数据集。其中Yelp和AGNews是是从huggingface上加载的，其他的四个数据集来自于LM-BFF的repo。[LM-BFF相关代码](https://github.com/princeton-nlp/LM-BFF)<br>
 ```bash
-python LB_aug/create_data.py
+/opt/conda/envs/lmaas/bin/python create_data.py
 ```
 将训练集中5个seed的训练数据剔除<br>
 ```bash
-python LB_aug/delete_seed.py
+/opt/conda/envs/lmaas/bin/python delete_seed.py
 ```
 利用LM-BFF模型对train_data进行预测，得到logits的numpy文件。对于不同数据集的不同seed，已经通过grid search找到最佳的参数设置，具体参考aug_setting.txt。出于复现考虑，将30组程序放入4个bash文件。
 ```bash
