@@ -23,20 +23,30 @@ cd LB_aug/
 ```bash
 /opt/conda/envs/lmaas/bin/python delete_seed.py
 ```
-利用LM-BFF模型对train_data进行预测，得到logits的numpy文件。对于不同数据集的不同seed，已经通过grid search找到最佳的参数设置，具体参考aug_setting.txt。出于复现考虑，将30组程序放入4个bash文件。
+利用LM-BFF模型对train_data进行预测，得到logits的numpy文件。对于不同数据集的不同seed，先通过grid search找到最佳的参数设置，具体参考aug_setting.txt。
 ```bash
-bash aug1.sh
+bash SNLI.sh
 ```
 ```bash
-bash aug2.sh
+bash QQP.sh
 ```
 ```bash
-bash aug3.sh
+bash QNLI.sh
 ```
 ```bash
-bash aug4.sh
+bash SST-2.sh
 ```
-
+```bash
+bash DBPedia.sh
+```
+之后，对于每一个data的每一个seed，查找它的最佳参数，并加载对应的logits文件。
+```bash
+python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'sst-2', 'few_shot_type': 'prompt-demo'}"
+python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
+python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qnli', 'few_shot_type': 'prompt-demo'}"
+python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
+python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'dbpedia', 'few_shot_type': 'prompt-demo'}"
+```
 ## 分类器训练
 
 分别训练不同task所有seed的分类器，首先需要对文件目录进行调整：
