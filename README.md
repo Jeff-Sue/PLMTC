@@ -45,7 +45,7 @@ python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'sst-2', 
 python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
 python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qnli', 'few_shot_type': 'prompt-demo'}"
 python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
-python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'dbpedia', 'few_shot_type': 'prompt-demo'}"
+python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'dbpedia', 'few_shot_type': 'prompt'}"
 ```
 ## 分类器训练
 
