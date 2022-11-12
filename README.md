@@ -44,7 +44,7 @@ bash DBPedia.sh
 /opt/conda/envs/lmbff/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'sst-2', 'few_shot_type': 'prompt-demo'}"
 /opt/conda/envs/lmbff/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
 /opt/conda/envs/lmbff/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qnli', 'few_shot_type': 'prompt-demo'}"
-/opt/conda/envs/lmbff/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qqp', 'few_shot_type': 'prompt-demo'}"
+/opt/conda/envs/lmbff/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qqp/f1', 'few_shot_type': 'prompt-demo'}"
 /opt/conda/envs/lmbff/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'dbpedia', 'few_shot_type': 'prompt'}"
 ```
 ## 分类器训练
