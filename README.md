@@ -41,11 +41,11 @@ bash DBPedia.sh
 ```
 之后，对于每一个data的每一个seed，查找它的最佳参数，并加载对应的logits文件。
 ```bash
-python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'sst-2', 'few_shot_type': 'prompt-demo'}"
-python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
-python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qnli', 'few_shot_type': 'prompt-demo'}"
-python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
-python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'dbpedia', 'few_shot_type': 'prompt'}"
+/opt/conda/envs/lmaas/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'sst-2', 'few_shot_type': 'prompt-demo'}"
+/opt/conda/envs/lmaas/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
+/opt/conda/envs/lmaas/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'qnli', 'few_shot_type': 'prompt-demo'}"
+/opt/conda/envs/lmaas/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'snli', 'few_shot_type': 'prompt-demo'}"
+/opt/conda/envs/lmaas/bin/python tools/gather_result.py --condition "{'tag': 'exp', 'task_name': 'dbpedia', 'few_shot_type': 'prompt'}"
 ```
 ## 分类器训练
 
